@@ -12,6 +12,36 @@ class Evaluator:
         self.pred_terms = pred_terms
         self._y_true, self._y_pred = self._convert_to_sklearn_format()
 
+    def true_positives(self):
+        """
+        >>> gold_terms = set(['bone', 'cell', 'finger', 'colon'])
+        >>> pred_terms = set(['brain', 'bone'])
+        >>> ev = Evaluator(gold_terms, pred_terms)
+        >>> ev.true_positives()
+        set(['bone'])
+        """
+        return self.gold_terms.intersection(self.pred_terms)
+
+    def false_positives(self):
+        """
+        >>> gold_terms = set(['bone', 'cell', 'finger', 'colon'])
+        >>> pred_terms = set(['brain', 'bone'])
+        >>> ev = Evaluator(gold_terms, pred_terms)
+        >>> ev.false_positives()
+        set(['brain'])
+        """
+        return self.pred_terms.difference(self.gold_terms)
+
+    def false_negatives(self):
+        """
+        >>> gold_terms = set(['bone', 'cell', 'finger', 'colon'])
+        >>> pred_terms = set(['brain', 'bone'])
+        >>> ev = Evaluator(gold_terms, pred_terms)
+        >>> ev.false_negatives()
+        set(['cell', 'colon', 'finger'])
+        """
+        return self.gold_terms.difference(self.pred_terms)
+
     def _convert_to_sklearn_format(self):
         '''Change the format of the data so that it can be used with sklearn
         methods.
