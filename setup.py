@@ -12,6 +12,9 @@ setup(
     url='https://github.com/LLCampos/evaluator',
     license='',
     install_requires=[
-        'requests'
+        'requests',
+        'sklearn',
+        'numpy',
+        'scipy',
     ],
 )
