@@ -43,6 +43,10 @@ False Positives: set(['basket', 'banana'])
 False Negatives: set(['cats', 'dolphin', 'spider'])
 ```
 
+## Installation
+```shell
+pip install git+https://github.com/LLCampos/pyEvaluator
+```
 
 
 
