@@ -7,7 +7,11 @@ class Evaluator:
         '''
         gold_terms and pred_terms are a sets of the terms extracted by the gold
         standard system and the system being tested, respectively.
-         '''
+        '''
+
+        if not isinstance(gold_terms, set) or not isinstance(pred_terms, set):
+            raise TypeError('Arguments should be of type "set"')
+
         self.gold_terms = gold_terms
         self.pred_terms = pred_terms
         self._y_true, self._y_pred = self._convert_to_sklearn_format()
