@@ -4,7 +4,7 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-    name='evaluator',
+    name='pyEvaluator',
     version='0.1',
     packages=['pyEvaluator'],
     author='Luis Campos',
