@@ -6,10 +6,10 @@ except ImportError:
 setup(
     name='evaluator',
     version='0.1',
-    packages=['Evaluator'],
-    author='Lu\xc3\xads Campos',
+    packages=['pyEvaluator'],
+    author='Luis Campos',
     author_email='luis.filipe.lcampos@gmail.com',
-    url='https://github.com/LLCampos/evaluator',
+    url='https://github.com/LLCampos/pyEvaluator',
     license='',
     install_requires=[
         'requests',
